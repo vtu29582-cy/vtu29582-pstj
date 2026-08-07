@@ -1,0 +1,35 @@
+import java.util.*;
+class Checker implements Comparator<Player> {
+    @Override
+    public int compare(Player a, Player b) {
+        if (a.score != b.score) {
+            // Descending order for score
+            return b.score - a.score;
+        } else {
+            // Alphabetical order for name
+            return a.name.compareTo(b.name);
+…            System.out.printf("%s %s\n", player[i].name, player[i].score);
+        }
+    }
+}
+class Player{
+    String name;
+    int score;
+    
+    Player(String name, int score){
+        this.name = name;
+…            System.out.printf("%s %s\n", player[i].name, player[i].score);
+        }
+    }
+}
+class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+
+…            System.out.printf("%s %s\n", player[i].name, player[i].score);
+        }
+    }
+}
+
