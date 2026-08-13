@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
+
+        for (String str : strs) {
+            int[] count = new int[26];
+
+            // Count each character
+            for (char c : str.toCharArray()) {
+                count[c - 'a']++;
+            }
+
+            // Convert count array into a String key
+            String key = Arrays.toString(count);
+
+            // Add string to its anagram group
+            map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
+        }
+
+        return new ArrayList<>(map.values());
+    }
+}
