@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    ArrayList<ArrayList<Integer>> multiply(int[][] matrixA, int[][] matrixB) {
+        int n = matrixA.length;
+
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            ArrayList<Integer> row = new ArrayList<>();
+
+            for (int j = 0; j < n; j++) {
+                int sum = 0;
+
+                for (int k = 0; k < n; k++) {
+                    sum += matrixA[i][k] * matrixB[k][j];
+                }
+
+                row.add(sum);
+            }
+
+            result.add(row);
+        }
+
+        return result;
+    }
+}
